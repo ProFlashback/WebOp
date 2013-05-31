@@ -1,0 +1,8 @@
+settings:
+  port: 1337
+  widget-data-update: 1000
+  widget-update: 100
+  console-data-update: 1000
+  console-update: 100
+whitelist:
+- jayfella

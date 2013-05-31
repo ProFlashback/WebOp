@@ -1,0 +1,28 @@
+#wrapper { width: 940px; margin: 0px auto 50px; padding: 6px; border-radius: 3px; background: url('image.php?opacity.png'); box-shadow: 0 1px 1px #606060, 0 1px 1px #2A2A2A inset; }
+html, body { font-family: 'Trebuchet MS',elvetica,Arial,sans-serif !important; font-size: 13px; background: url('image.php?default.jpg'); }
+.container { background: #f1f1f1; padding: 10px; border-radius: 3px; width: 920px; }
+.containerSpacer { width: 920px; height: 10px; }
+#menu { width: 100%; overflow: hidden; padding: 5px 0px; background: url("image.php?progress_overlay.png") repeat scroll 0 0%, linear-gradient(to bottom , #E57256 0%, #AE3417 100%) repeat scroll 0 0 transparent; border-radius: 5px; }
+#menu div ul { list-style-type: none; margin: 0px; padding: 8px; }
+#menu div ul li { display: inline; padding: 0px 5px; }
+#menu div ul li a { text-decoration: none; padding: 5px 10px; font-weight: bold; color: #ffffff; box-shadow: 0 0 3px #a33216 inset; border-radius: 5px; background: #cc5b3f; }
+#menu div ul li a:hover { text-decoration: none; background: #B34226; border-radius: 5px; }
+.menuItem { width: 75px; float: left; }
+.widget { width: inherit; height: inherit; padding: 5px; margin: 10px 0px; text-align: center; font-style: italic; color: #404040; }
+.widgetTitle { text-align: center; width: 215px; height: 115px; margin: 0 0 40px; font-style: italic; color: #3A3A3A; float: left; }
+.widgetSpacer { width: 13px; height: 115px; float: left; }
+.loginTextbox { border: 1px solid #DADADA; margin: 3px; width: 200px; padding: 2px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02) inset, 0 1px 0 #FFFFFF; }
+.logincontainer { display: table; }
+.loginrow { display: table-row; }
+.loginleft { display: table-cell; padding-right: 5px; text-align:right; vertical-align:middle; }
+.loginright { display: table-cell; vertical-align: middle; font-size: 12px; }
+#consoleData { background-color:#000; color: #c0c0c0; height: 300px; position: relative; width: inherit; font-family: Consolas,Menlo,Monaco,'Lucida Console','Liberation Mono','DejaVu Sans Mono','Bitstream Vera Sans Mono','Courier New','monospace,serif'; overflow: auto; }
+#consoleText { font-family: Consolas,Menlo,Monaco,'Lucida Console','Liberation Mono','DejaVu Sans Mono','Bitstream Vera Sans Mono','Courier New','monospace,serif'; width: 883px; padding: 2px 4px; border-radius: 3px; border: 1px solid #a9a9a9; }
+.container h3 { font-size: 16px; margin: 0 0 10px 0px; padding: 8px 10px; color: #ffffff; text-shadow: 3px 3px 7px #000000; border-radius: 3px; background: url('image.php?progress_overlay.png') repeat scroll 0 0%, linear-gradient(to bottom, #68B4DD 0%, #2F86B2 100%) repeat scroll 0 0 transparent; }
+.blueButton { background: linear-gradient(to bottom, #6DB5D5 0%, #4A91C0 100%) repeat scroll 0 0 transparent; border: 1px solid #5897C3; color: #FFFFFF; display: inline-block; font-size: 11px; font-weight: bold; line-height: 13px; margin: 2px 0; padding: 5px 10px; border-radius: 5px; }
+.ui-tooltip { font-size:10pt !important; font-family:Calibri !important; }
+#whitelistSel { list-style-type: none; margin: 0 0 10px; padding: 0; background: transparent; }
+#whitelistSel li { padding:4px; font-size: 12px; border: none; background: transparent; }
+#whitelistSel .ui-selecting { background: #88b7da; cursor: pointer; color: white; }
+#whitelistSel .ui-selected { background: #70a8d2; color: white; cursor: pointer; }
+.ui-widget-overlay { opacity: .60 !important; filter: Alpha(Opacity=60) !important; background-color: rgb(50, 50, 50) !important; background: rgb(50, 50, 50) !important; }

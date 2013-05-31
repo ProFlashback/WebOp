@@ -1,0 +1,92 @@
+
+<div class="container">
+    <div id="menu">
+        <div style="float: left;">
+            <ul>
+                <li><a id="whitelistLink" href="#">Whitelist</a></li>
+                <li><a href="#">Options</a></li>
+            </ul>
+        </div>
+
+        <div style="float: right;">
+            <ul>
+                <span style="color: #EFEFEF; font-style: italic; font-weight: bold;">Welcome, {username}.</span>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<div class='containerSpacer'></div>
+<div class='container'>
+
+    <h3>Details</h3>
+
+    <strong>Running:&nbsp;</strong>{bukkitversion}<br>
+    <strong>Plugins ({plugincount}):&nbsp;</strong>{pluginlist}
+
+</div>
+
+<div class='containerSpacer'></div>
+<div class='container'>
+
+    <h3>Server Health</h3>
+
+    <div style='height: 145px;'>
+        {widgetdata}
+    </div>
+
+</div>
+
+<div class='containerSpacer'></div>
+<div class='container'>
+
+    <h3>Log Search</h3>
+    <div>
+        <form id="logSearchForm">
+            <label for="searchTerm">Search</label>
+            <input name="searchTerm" type="text" style="width: 530px;">
+
+            <label for="timeFrame">TimeFrame</label>
+            <input name="timeFrame" type="text" style="width: 155px;" title="Example: 6w5d4h3m2s<br/><br/>6 Week<br/>5 days<br/>4 hours<br/>3 minutes<br/>2 seconds">
+
+            <button class="blueButton" value="Seach" >Search</button>
+
+            <img id='ajaxloader' src='image.php?ajax.gif' height="26" width='26' style='vertical-align: middle;' />
+
+        </form>
+    </div>
+
+    <div id='searchOutput' style="max-height: 250px; overflow: auto;">
+
+    </div>
+
+    <script type='text/javascript' src="jscript.php?LogSearchSubmit.js"></script>
+
+</div>
+
+
+<div class='containerSpacer'></div>
+<div class='container'>
+
+    <h3>Console Output</h3>
+
+    <div id='consoleData' class='consoleData' style="">Loading Data...</div>
+
+
+    <form id='consoleForm'>
+        <div style="display: inline-block; margin-top: 10px;">
+            <input type='checkbox' name='asConsole' style='vertical-align: middle; margin-right: 10px; float: left;' title='execute as console'>
+            <input id='consoleText' name='consoleText' type='text'>
+        </div>
+    </form>
+
+    <script type='text/javascript' src="jscript.php?ConsoleSubmit.js"></script>
+
+</div>
+
+<div id="whitelistPage" title="Whitelist"></div>
+
+<script type='text/javascript' src="jscript.php?whitelistDialog.js"></script>

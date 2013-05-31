@@ -1,0 +1,103 @@
+<div class="container" style='width: 95%; padding: 10px; font-size: 12px; margin: auto;'>
+
+    <script type="text/javascript">
+        $(function()
+        {
+            $( "#whitelistSel" ).selectable(
+            {
+                stop: function()
+                {
+                    $("#removeWhitelistText").val('');
+                    var output = '';
+
+                    $( ".ui-selected", this ).each(function()
+                    {
+                        output = output + $(this).text() + ", ";
+                    });
+
+                    $("#removeWhitelistText").val(output);
+                }
+            });
+        });
+    </script>
+
+    <ol id="whitelistSel">
+            {whitelistedusers}
+    </ol>
+
+    <form id="removeWhitelist" action=''>
+
+        <input name="removePlayers" type="text" style="width: 99%;" id="removeWhitelistText"><br/>
+        <button id="addtoWhitelistButton" value='Remove Selected Users' class="blueButton">Remove Selected Users</button>
+    </form>
+
+    <script type="text/javascript">
+        $('#removeWhitelist').submit(function(evt)
+        {
+            var $form = $(this);
+            var $inputs = $form.find('input, select, button, textarea');
+            var serializedData = $form.serialize();
+
+            $inputs.prop('disabled', true);
+
+            var request = $.ajax(
+            {
+                url: 'remwhitelist.php',
+                type: 'post',
+                data: serializedData
+            });
+
+            request.done(function(response, textStatus, jqXHR) { wlDialog.load('viewpage.php?whitelist').dialog('open'); } );
+            request.fail(function(jqXHR, textStatus, errorThrown) {  });
+
+            request.always(function()
+            {
+                $inputs.prop('disabled', false);
+            });
+
+            evt.preventDefault();
+
+        });
+    </script>
+
+
+
+    <hr>
+
+    Add user(s) to white-list. Usernames are case sensitive. Separate multiple users using a comma.<br/>
+    <form id="addWhitelist" action=''>
+        <input name="addPlayers" type="text" style="width: 99%;"><br/>
+        <button id="removeFromWhitelistButton" class="blueButton" value='Add User(s)'>Add User(s)</button>
+    </form>
+
+    <script type="text/javascript">
+        $('#addWhitelist').submit(function(evt)
+        {
+            var $form = $(this);
+            var $inputs = $form.find('input, select, button, textarea');
+            var serializedData = $form.serialize();
+
+            $inputs.prop('disabled', true);
+
+            var request = $.ajax(
+            {
+                url: 'addwhitelist.php',
+                type: 'post',
+                data: serializedData
+            });
+
+            request.done(function(response, textStatus, jqXHR) { wlDialog.load('viewpage.php?whitelist').dialog('open'); } );
+            request.fail(function(jqXHR, textStatus, errorThrown) {  });
+
+            request.always(function()
+            {
+                $inputs.prop('disabled', false);
+            });
+
+            evt.preventDefault();
+
+        });
+    </script>
+
+
+</div>
