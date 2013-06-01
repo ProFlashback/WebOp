@@ -1,5 +1,7 @@
 package me.jayfella.webop;
 
+import me.jayfella.webop.Core.HttpListener;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class WebOpPlugin extends JavaPlugin
@@ -15,7 +17,7 @@ public class WebOpPlugin extends JavaPlugin
     @Override
     public void onDisable()
     {
-
+    	this.context.shutdownListener();
     }
 
     public WebOpContext getContext() { return this.context; }

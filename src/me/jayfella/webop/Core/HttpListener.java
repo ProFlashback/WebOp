@@ -4,6 +4,7 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,8 +31,9 @@ public final class HttpListener implements HttpHandler
         try
         {
             int port = context.getPluginSettings().portNumber();
+            InetAddress ipaddr = InetAddress.getByName(context.getPluginSettings().ipAddress());
 
-            this.httpServer = HttpServer.create(new InetSocketAddress(port), 0);
+            this.httpServer = HttpServer.create(new InetSocketAddress(ipaddr, port), 0);
             this.httpServer.createContext("/", this);
             this.httpServer.setExecutor(null);
             this.httpServer.start();
@@ -45,6 +47,13 @@ public final class HttpListener implements HttpHandler
         }
 
         return true;
+    }
+    
+    public boolean shutdown()
+    {
+    	this.context.getLogger().log(Level.INFO, "Shutting down HttpServer.");
+		this.httpServer.stop(0);
+		return true;
     }
 
     public boolean isInitialized() { return this.isInitialized; }

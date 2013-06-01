@@ -77,6 +77,11 @@ public final class WebOpContext
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return encoding.decode(ByteBuffer.wrap(encoded)).toString();
     }
+    
+    public void shutdownListener ()
+    {
+    	listener.shutdown();
+    }
 
     public long parseDateDiff(String time, Date beginDate, boolean future)
 	{

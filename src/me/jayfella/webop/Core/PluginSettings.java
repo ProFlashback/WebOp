@@ -11,6 +11,7 @@ public final class PluginSettings
     private final FileConfiguration fileConfig;
 
     private final int portNumber;
+    private final String ipAddress;
 
     private final int widgetDataUpdate;
     private final int widgetUpdate;
@@ -27,6 +28,7 @@ public final class PluginSettings
         fileConfig = this.context.getPlugin().getConfig();
 
         this.portNumber = fileConfig.getInt("settings.port");
+        this.ipAddress = fileConfig.getString("settings.ip");
 
         this.widgetDataUpdate = fileConfig.getInt("settings.widget-data-update");
         this.widgetUpdate = fileConfig.getInt("settings.widget-update");
@@ -49,6 +51,7 @@ public final class PluginSettings
     public FileConfiguration getFileConfig() { return this.fileConfig; }
 
     public int portNumber() { return this.portNumber; }
+    public String ipAddress() { return this.ipAddress; }
 
     public int widgetDataUpdate() { return this.widgetDataUpdate; }
     public int widgetUpdate() { return this.widgetUpdate; }
